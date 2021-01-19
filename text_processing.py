@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 #######################
 # Test Processing I   #
 #######################
@@ -33,8 +35,9 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
-    return normalized_string
+    
+    normalized_string = ' '.join(input_string.rstrip().lstrip().split())
+    return normalized_string.lower()
 
 
 def no_vowels(input_string):
@@ -58,5 +61,9 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
+    no_vowel_string = ''
+    for i in input_string:
+        if i.lower()!='a' and i.lower()!='e' and i.lower()!='i' and i.lower()!='o' and i.lower()!='u':
+            no_vowel_string = no_vowel_string + i
+
     return no_vowel_string
